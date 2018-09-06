@@ -291,17 +291,12 @@ FROM (SELECT total_amt_usd
 ORDER BY total_amt_usd DESC
 LIMIT 2;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Exemplify the usage of WITH*/
+WITH subquery_example AS (SELECT total_amt_usd
+						  FROM orders
+						  ORDER BY total_amt_usd
+						  LIMIT 3457)
+SELECT *
+FROM  subquery_example AS T1
+ORDER BY total_amt_usd DESC
+LIMIT 2;
